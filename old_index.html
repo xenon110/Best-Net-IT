@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elite IT Distribution</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1b1c1c",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#e4e2e2",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-bright": "#fbf9f8",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f5f3f3",
+                      "on-tertiary-container": "#3b3b38",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "tertiary-fixed": "#e4e2dd",
+                      "on-secondary-container": "#656464",
+                      "inverse-surface": "#303031",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a",
+                      "outline-variant": "#d1c5b4",
+                      "background": "#fbf9f8",
+                      "surface-container-high": "#e9e8e7",
+                      "tertiary-fixed-dim": "#c8c6c2",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#775a19",
+                      "on-tertiary-fixed-variant": "#474744",
+                      "inverse-primary": "#e9c176",
+                      "inverse-on-surface": "#f2f0f0",
+                      "primary": "#775a19",
+                      "on-primary-fixed": "#261900",
+                      "secondary-fixed": "#e4e2e1",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#a6a5a1",
+                      "on-tertiary-fixed": "#1b1c19",
+                      "on-background": "#1b1c1c",
+                      "primary-fixed-dim": "#e9c176",
+                      "on-primary": "#ffffff",
+                      "secondary": "#5f5e5e",
+                      "on-primary-fixed-variant": "#5d4201",
+                      "surface-container": "#efeded",
+                      "surface-variant": "#e4e2e2",
+                      "secondary-container": "#e4e2e1",
+                      "on-primary-container": "#4e3700",
+                      "surface": "#fbf9f8",
+                      "primary-fixed": "#ffdea5",
+                      "primary-container": "#c5a059",
+                      "outline": "#7f7667",
+                      "surface-dim": "#dbdad9",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "tertiary": "#5e5e5b",
+                      "on-secondary-fixed-variant": "#474747",
+                      "on-surface-variant": "#4e4639"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "container-max": "1440px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg-mobile": [
+                              "Bodoni Moda"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-sm": [
+                              "Bodoni Moda"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-md": [
+                              "Bodoni Moda"
+                      ],
+                      "display-lg": [
+                              "Bodoni Moda"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;500;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 40px -10px rgba(74, 67, 49, 0.05);
+        }
+        .btn-primary {
+            background-color: #c5a059;
+            color: #ffffff;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .btn-primary:hover {
+            transform: scale(1.02);
+            background-color: #775a19;
+        }
+        .btn-secondary {
+            border: 1px solid #7f7667;
+            color: #1b1c1c;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .btn-secondary:hover {
+            transform: scale(1.02);
+            border-color: #775a19;
+            color: #775a19;
+        }
+        .card-border {
+            border: 1px solid #d1c5b4;
+        }
+    </style>
+</head>
+<body class="antialiased font-body-md text-body-md bg-background">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky bg-surface border-b border-outline-variant/30 shadow-sm shadow-on-surface/5 z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm tracking-tight text-primary">
+                ELITE IT DISTRO
+            </div>
+<div class="hidden md:flex space-x-8">
+<a class="text-secondary hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="#">Products</a>
+<a class="text-secondary hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="#">Brands</a>
+<a class="text-secondary hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="#">Industries</a>
+<a class="text-secondary hover:text-primary transition-colors duration-300 font-label-sm text-label-sm" href="#">Support</a>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-on-surface hover:text-primary cursor-pointer transition-colors">search</span>
+<button class="btn-primary px-6 py-2 rounded font-label-sm text-label-sm hidden md:block">
+                    Request a Quote
+                </button>
+<span class="material-symbols-outlined md:hidden text-on-surface">menu</span>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center pt-20 pb-32 overflow-hidden">
+<div class="absolute inset-0 z-0" data-alt="Cinematic high-end server room blending seamlessly with a bright, sunlit Dubai skyline visible through massive glass windows. The atmosphere is luxurious, light, and airy, employing a soft-premium aesthetic. The color palette focuses on pristine whites, soft cremes, and subtle champagne gold accents, moving completely away from traditional dark IT visuals. The lighting is high-key, casting soft, diffused shadows to emphasize the pristine quality of the technology and architecture. A sense of 'Quiet Luxury' and calm reliability permeates the scene." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB70qJggXNz_mZwaarl9jecU66VhillI0MkDMTdgWrYkwiiT3_fGYk0AJowKkXz10FR2x9OMkRCXn0pxat75HM4jdQtXYFvimkrvu4DDgPM80FzY-jpmmbjFBWDwPYv4DLFAYcgppf3z37aG-EfCSWF6srGn9qQJN1HRjucfYXuPJaMLa-2yBhHE2W-LM2YwDAjo8SdetYlXgrPb3GSZB_QOa6ueBKx8ymyrMIZQ6JoNHmTRbDr4Cje1JZfvW45eP_FoCoVqy28d61n')"></div>
+<div class="absolute inset-0 bg-background/80 backdrop-blur-[2px] z-10"></div>
+<div class="relative z-20 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="max-w-3xl">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6">
+                    Global IT Excellence. <br/><span class="text-primary">Delivered with Precision.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">
+                    Experience concierge-level enterprise procurement. We connect the world's most demanding businesses with premium technology solutions, defined by clarity, reliability, and an uncompromising standard of service.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="btn-primary px-8 py-3 rounded font-label-sm text-label-sm">
+                        Explore Catalog
+                    </button>
+<button class="btn-secondary px-8 py-3 rounded font-label-sm text-label-sm bg-surface-container-lowest">
+                        Speak to an Advisor
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-20 bg-surface-container-lowest border-y border-outline-variant/30 relative z-30 -mt-10 mx-margin-mobile md:mx-margin-desktop rounded-lg soft-shadow">
+<div class="max-w-container-max mx-auto px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 divide-x divide-outline-variant/30">
+<div class="text-center px-4">
+<div class="font-headline-md text-headline-md text-primary mb-2">15+</div>
+<div class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Years Excellence</div>
+</div>
+<div class="text-center px-4">
+<div class="font-headline-md text-headline-md text-primary mb-2">120+</div>
+<div class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Countries</div>
+</div>
+<div class="text-center px-4">
+<div class="font-headline-md text-headline-md text-primary mb-2">5K+</div>
+<div class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Partners</div>
+</div>
+<div class="text-center px-4">
+<div class="font-headline-md text-headline-md text-primary mb-2">50K+</div>
+<div class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">SKUs</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Bento Grid -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Curated Technology Portfolios</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Discover our selection of enterprise-grade hardware, carefully sourced to meet the exacting standards of global industry leaders.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Commercial Laptops -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden card-border soft-shadow transition-transform duration-300 hover:-translate-y-1">
+<div class="aspect-w-16 aspect-h-10 bg-surface-container-low relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A sleek, ultra-thin commercial laptop resting on a minimalist white marble desk. The setting is a bright, airy office environment bathed in natural light. The aesthetic is soft-premium, utilizing a 'White-on-Creme' palette with subtle champagne gold accents to signify luxury and high-stakes B2B commerce. The image feels calm, reliable, and prestigious, avoiding any dark or aggressive IT tropes." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDw7eqTs44E5iAnNYcneueMaPJD4vVixF6-Eh8kU23fYbqdSHv8NBk3Gth8rtgPDcWxpv_9ED-uH-jgTWq8vf5Fn0ZM7ELcVlM2vEe8WUS0NO9TudiGFhrJkxKtlNAzDNm-fgrn4Z037_8b77IWabbfy1f7zGIMcx1fTOMqSC_nSUqXvZsc2_3wTf2l1GljUEjOBv0F1P5bsU3gVNv17ROIl1gRMYvxhgFZ6Yo1MvLpbs-8I41D11FZfq8qYTQs4Tq9hpz_hEz0q6B_')"></div>
+</div>
+<div class="p-8">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Commercial Laptops</h3>
+<span class="material-symbols-outlined text-primary">laptop_mac</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Fleet-ready, high-performance mobility solutions for the modern executive workforce.</p>
+<a class="inline-flex items-center font-label-sm text-label-sm text-primary hover:text-on-primary-container transition-colors" href="#">
+                        View Collection <span class="material-symbols-outlined ml-2 text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Workstations -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden card-border soft-shadow transition-transform duration-300 hover:-translate-y-1">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div> <!-- Inventory Premium Indicator -->
+<div class="aspect-w-16 aspect-h-10 bg-surface-container-low relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A high-end professional workstation tower sitting in a pristine, light-filled architectural studio. The environment features soft white walls, light wood textures, and a subtle champagne gold desk lamp. The lighting is diffused and welcoming, embodying a soft-skeuomorphic minimalism. The focus is on the clean lines of the workstation, projecting an image of quiet luxury and authoritative capability within a light-mode B2B context." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1KtI7_DY7qM-b31eNOANfAhdSEWf9nf0CZuPQ-nCKCFFC_uN9VyzlH7Y434WY7aFRrp2pngGBaq9gV61paIxNj8DV2SdB9PV7lIqOklzsA95I1deNWJR7Ucu3xbFMbbquHD2-TYrEaf_90M59YtVIlIoLI3I0i5FpiwrpCDoIPDqvVuyRQIfV0XDvewdu9Gxe_Kw70ZJs0gbvziza1e6NeGOxMhfmTpYjFJGe-PWw1VTQcqLdVvi7ZikEDnOQkmhTKw5Emfosz5JT')"></div>
+</div>
+<div class="p-8">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center space-x-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Workstations</h3>
+<span class="bg-primary-container/20 text-on-primary-container px-2 py-1 rounded-[2px] font-label-sm text-[10px] tracking-wider uppercase">Exclusive</span>
+</div>
+<span class="material-symbols-outlined text-primary">computer</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Uncompromising compute power for data science, engineering, and advanced rendering.</p>
+<a class="inline-flex items-center font-label-sm text-label-sm text-primary hover:text-on-primary-container transition-colors" href="#">
+                        View Collection <span class="material-symbols-outlined ml-2 text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Gaming & Creation -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden card-border soft-shadow transition-transform duration-300 hover:-translate-y-1">
+<div class="aspect-w-16 aspect-h-10 bg-surface-container-low relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A premium content creation setup featuring a high-resolution color-accurate monitor and specialized input devices on a clean, light-colored desk. The aesthetic completely rejects the typical dark, neon-lit gaming look. Instead, it uses a soft-premium 'Quiet Luxury' style with high-fidelity, high-key lighting. The atmosphere is professional, calm, and tailored for high-end digital artists and creators, utilizing cremes, whites, and subtle warm gray tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDd4KDMtukB41C1hMkKfzlhTWpls0SKgGofEYsOjwng9UHzzbaJda0L4xENKkySqHGlddtKhjLqyN5IMVj1qgu7YeK0VyTKg_MgkOpn7ef_E484ZUcEdd2pqFg6W8y1D6f5rQC7jpsRptMdM1_eAyHjchy31eyHKMx1yT7UGxhvjL9TLE6JeU4UrEy0GaU_KD63jnGC-Kiy13oV90KUo62xu6GefWEgB9Lw0kcmnVJJ4Xx9QhK6x1mckwfMqyWEKvS0yPPRkb3VmzD2')"></div>
+</div>
+<div class="p-8">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Gaming &amp; Creation</h3>
+<span class="material-symbols-outlined text-primary">sports_esports</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Specialized hardware driving the next generation of digital entertainment and media production.</p>
+<a class="inline-flex items-center font-label-sm text-label-sm text-primary hover:text-on-primary-container transition-colors" href="#">
+                        View Collection <span class="material-symbols-outlined ml-2 text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-surface-container-low border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto gap-gutter">
+<div class="font-headline-sm text-headline-sm text-on-surface text-center md:text-left mb-6 md:mb-0">
+                ELITE IT DISTRO
+            </div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-8">
+<a class="font-label-sm text-label-sm text-on-secondary-container hover:text-primary underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-secondary-container hover:text-primary underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-secondary-container hover:text-primary underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">ISO Certifications</a>
+<a class="font-label-sm text-label-sm text-on-secondary-container hover:text-primary underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Global Logistics</a>
+<a class="font-label-sm text-label-sm text-on-secondary-container hover:text-primary underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Careers</a>
+</div>
+</div>
+<div class="text-center py-6 border-t border-outline-variant/10 text-on-surface-variant font-label-sm text-label-sm opacity-60">
+            © 2024 Elite IT Distribution. All rights reserved. Global Excellence in B2B Technology.
+        </div>
+</footer>
+</body></html>

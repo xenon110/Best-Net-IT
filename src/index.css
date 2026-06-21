@@ -1,0 +1,598 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    background-color: #fbf9f8;
+    color: #1b1c1c;
+  }
+}
+
+@layer utilities {
+  .soft-shadow {
+    box-shadow: 0 10px 40px -10px rgba(74, 67, 49, 0.05);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: #c5a059;
+    color: #ffffff;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  .btn-primary:hover {
+    transform: scale(1.05);
+    background-color: #775a19;
+  }
+  .btn-secondary {
+    border: 1px solid #7f7667;
+    color: #1b1c1c;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-secondary:hover {
+    transform: scale(1.05);
+    border-color: #775a19;
+    color: #775a19;
+  }
+  .card-border {
+    border: 1px solid #d1c5b4;
+  }
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 8rem 0;
+  background-color: #f5f3f3;
+  border-top: 1px solid rgba(209, 197, 180, 0.3);
+  border-bottom: 1px solid rgba(209, 197, 180, 0.3);
+}
+
+.testimonial-wrapper {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.testimonial-grid {
+  display: grid;
+  gap: 5rem;
+}
+
+@media (min-width: 768px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .arrow-buttons {
+    padding-top: 0 !important;
+  }
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 24rem;
+  perspective: 1000px;
+}
+
+.testimonial-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-name {
+  font-family: "Bodoni Moda", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1b1c1c;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-designation {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 0.875rem;
+  color: #5f5e5e;
+  margin-bottom: 2rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.testimonial-quote {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #4e4639;
+  font-style: italic;
+}
+
+.arrow-buttons {
+  display: flex;
+  gap: 1rem;
+  padding-top: 2.5rem;
+}
+
+.arrow-button {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+}
+
+.arrow-button:hover {
+  transform: scale(1.1);
+}
+
+/* ==============================
+   Lamp CTA Section
+   ============================== */
+.lamp-container {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #1a1814;
+  width: 100%;
+  z-index: 0;
+}
+
+.lamp-inner {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex: 1;
+  transform: scaleY(1.25);
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  z-index: 0;
+}
+
+.lamp-arm {
+  position: absolute;
+  inset: auto;
+  height: 14rem;
+  overflow: visible;
+}
+
+.lamp-arm-left {
+  right: 50%;
+}
+
+.lamp-arm-right {
+  left: 50%;
+}
+
+.lamp-mask-bottom {
+  position: absolute;
+  width: 100%;
+  height: 10rem;
+  bottom: 0;
+  z-index: 20;
+  background-color: #1a1814;
+  -webkit-mask-image: linear-gradient(to top, white, transparent);
+  mask-image: linear-gradient(to top, white, transparent);
+}
+
+.lamp-mask-left {
+  position: absolute;
+  width: 10rem;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 20;
+  background-color: #1a1814;
+  -webkit-mask-image: linear-gradient(to right, white, transparent);
+  mask-image: linear-gradient(to right, white, transparent);
+}
+
+.lamp-mask-right {
+  position: absolute;
+  width: 10rem;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  background-color: #1a1814;
+  -webkit-mask-image: linear-gradient(to left, white, transparent);
+  mask-image: linear-gradient(to left, white, transparent);
+}
+
+.lamp-bg-blur {
+  position: absolute;
+  top: 50%;
+  height: 12rem;
+  width: 100%;
+  transform: translateY(3rem) scaleX(1.5);
+  background-color: #1a1814;
+  filter: blur(40px);
+}
+
+.lamp-backdrop {
+  position: absolute;
+  top: 50%;
+  z-index: 50;
+  height: 12rem;
+  width: 100%;
+  background: transparent;
+  opacity: 0.1;
+  backdrop-filter: blur(12px);
+}
+
+.lamp-glow-orb {
+  position: absolute;
+  inset: auto;
+  z-index: 50;
+  height: 9rem;
+  width: 28rem;
+  transform: translateY(-50%);
+  border-radius: 9999px;
+  background-color: #c5a059;
+  opacity: 0.5;
+  filter: blur(48px);
+}
+
+.lamp-glow-inner {
+  position: absolute;
+  inset: auto;
+  z-index: 30;
+  height: 9rem;
+  transform: translateY(-6rem);
+  border-radius: 9999px;
+  background-color: #e9c176;
+  filter: blur(32px);
+}
+
+.lamp-light-bar {
+  position: absolute;
+  inset: auto;
+  z-index: 50;
+  height: 2px;
+  transform: translateY(-7rem);
+  background-color: #e9c176;
+}
+
+.lamp-top-cover {
+  position: absolute;
+  inset: auto;
+  z-index: 40;
+  height: 11rem;
+  width: 100%;
+  transform: translateY(-12.5rem);
+  background-color: #1a1814;
+}
+
+.lamp-content {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  transform: translateY(-20rem);
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.25rem;
+}
+
+.lamp-heading {
+  font-family: "Bodoni Moda", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-align: center;
+  background: linear-gradient(to bottom right, #f5f3f3, #c5a059);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .lamp-heading {
+    font-size: 4.5rem;
+  }
+}
+
+.lamp-subtext {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: rgba(209, 197, 180, 0.7);
+  max-width: 36rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.lamp-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.lamp-btn-primary {
+  padding: 0.875rem 2.5rem;
+  border-radius: 0.125rem;
+  background-color: #c5a059;
+  color: #ffffff;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.lamp-btn-primary:hover {
+  transform: scale(1.05);
+  background-color: #775a19;
+}
+
+.lamp-btn-secondary {
+  padding: 0.875rem 2.5rem;
+  border-radius: 0.125rem;
+  background-color: transparent;
+  color: #d1c5b4;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(209, 197, 180, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.lamp-btn-secondary:hover {
+  transform: scale(1.05);
+  border-color: #c5a059;
+  color: #e9c176;
+}
+
+/* ==============================
+   Brand Showcase / Fan Cards
+   ============================== */
+.brand-showcase-section {
+  padding: 5rem 0 4rem;
+  background-color: #fbf9f8;
+  overflow: hidden;
+}
+
+.brand-showcase-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.brand-showcase-divider {
+  width: 4rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c5a059, transparent);
+  margin: 0 auto 2.5rem;
+}
+
+.brand-showcase-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.brand-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.brand-stat-number {
+  font-family: "Bodoni Moda", serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #775a19;
+}
+
+.brand-stat-label {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5f5e5e;
+}
+
+.brand-stat-separator {
+  width: 1px;
+  height: 2.5rem;
+  background-color: rgba(209, 197, 180, 0.4);
+}
+
+@media (max-width: 480px) {
+  .brand-stat-separator {
+    display: none;
+  }
+}
+
+.brand-showcase-tagline {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #4e4639;
+  max-width: 40rem;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.fan-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1rem 2rem;
+  position: relative;
+  z-index: 20;
+}
+
+.fan-section-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 90rem;
+}
+
+.fan-layout {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 80rem;
+  height: 22rem;
+}
+
+@media (min-width: 480px) {
+  .fan-layout { height: 26rem; }
+}
+@media (min-width: 640px) {
+  .fan-layout { height: 28rem; }
+}
+@media (min-width: 768px) {
+  .fan-layout { height: 34rem; }
+}
+@media (min-width: 1024px) {
+  .fan-layout { height: 38rem; }
+}
+
+.fan-card {
+  position: absolute;
+  width: 10rem;
+  height: 14rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(74, 67, 49, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(209, 197, 180, 0.3);
+  opacity: 0;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+@media (min-width: 480px) {
+  .fan-card { width: 11rem; height: 15rem; }
+}
+@media (min-width: 640px) {
+  .fan-card { width: 13rem; height: 17rem; }
+}
+@media (min-width: 768px) {
+  .fan-card { width: 16rem; height: 21rem; }
+}
+@media (min-width: 1024px) {
+  .fan-card { width: 18rem; height: 24rem; border-radius: 1.25rem; }
+}
+
+.fan-card:hover {
+  box-shadow: 0 16px 48px rgba(197, 160, 89, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fan-card-link {
+  display: block;
+}
+
+.fan-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fan-card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+
+.fan-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  z-index: 30;
+}
+
+.fan-arrow-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1.5px solid rgba(27, 28, 28, 0.15);
+  background-color: rgba(27, 28, 28, 0.05);
+  backdrop-filter: blur(16px);
+  color: rgba(27, 28, 28, 0.5);
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.fan-arrow-btn:hover {
+  border-color: rgba(27, 28, 28, 0.3);
+  color: rgba(27, 28, 28, 0.8);
+  background-color: rgba(197, 160, 89, 0.1);
+}
+
+.fan-arrow-btn:active {
+  opacity: 0.7;
+}
+
+.fan-chevron {
+  position: relative;
+  z-index: 2;
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.fan-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fan-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: rgba(27, 28, 28, 0.15);
+  transition: all 0.3s ease;
+}
+
+.fan-dot-active {
+  background-color: #c5a059;
+  transform: scale(1.3);
+}
